@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+
+.connect-four {
+    background-color: yellow;
+    display: inline-block;
+
+}
+
+.col {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    background: white;
+    border-radius: 50%;
+    margin: 5px;
+}
