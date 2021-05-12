@@ -26,3 +26,7 @@ body {
 .red-hover {
     background-color: rgba(255, 0, 0, 0.5);
 }
+
+.red-piece {
+    background-color: red;
+}
