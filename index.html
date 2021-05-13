@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Connect-Four-512.png"/>
     <link rel="stylesheet" href="style.css" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="connectFour.js"></script>
@@ -14,7 +15,11 @@
     <div class="container">
         <h1>Connect Four</h1>
         <h3><span id="player">Red</span>'s turn</h3>
-        <div class="connect-four"></div>
+        <div class="game-container">
+            <div class="left-leg"></div>
+            <div class="connect-four"></div>
+            <div class="right-leg"></div>
+        </div>
         <br>
         <button id="restart">Restart</button>
     </div>
