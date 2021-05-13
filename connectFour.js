@@ -3,12 +3,14 @@ class ConnectFour {
         this.rows = 6
         this.cols = 7
         this.selector = selector
+        this.player = 'red'
         this.createGrid()
         this.setupEventListeners()
     }
 
     createGrid() {
         const $board = $(this.selector)
+
         for (let row = 0; row < this.rows; row++) {
             const $row = $('<div>').addClass('row')
             for (let col = 0; col < this.cols; col++) {
@@ -24,6 +26,7 @@ class ConnectFour {
 
     setupEventListeners() {
         const $board = $(this.selector)
+        const that = this
 
         function findLastEmptyCell(col) {
             const cells = $(`.col[data-col='${col}']`)
@@ -39,20 +42,21 @@ class ConnectFour {
         $board.on('mouseenter', '.col.empty', function() {
             const col = $(this).data('col')
             const $lastEmptyCell = findLastEmptyCell(col)
-            $lastEmptyCell.addClass('red-hover')
+            $lastEmptyCell.addClass(`${that.player}-hover`)
         })
 
         $board.on('mouseleave', '.col', function() {
-            $('.col').removeClass('red-hover')
+            $('.col').removeClass(`${that.player}-hover`)
         })
 
-        $board.on('click', '.empty', function() {
+        $board.on('click', '.col.empty', function() {
             const col = $(this).data('col')
             const row = $(this).data('row')
             const $lastEmptyCell = findLastEmptyCell(col)
-            $lastEmptyCell.removeClass('empty')
-            $lastEmptyCell.addClass('red-piece')
-
+            $lastEmptyCell.removeClass(`empty ${that.player}-hover`)
+            $lastEmptyCell.addClass(`${that.player}-piece`)
+            that.player = (that.player === 'red') ? 'black' : 'red'
+            $(this).trigger('mouseenter')
         })
     }
 } 

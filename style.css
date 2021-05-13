@@ -23,10 +23,22 @@ body {
     margin: 5px;
 }
 
+.col.empty {
+    cursor: pointer;
+}
+
 .red-hover {
     background-color: rgba(255, 0, 0, 0.5);
 }
 
+.black-hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .red-piece {
     background-color: red;
+}
+
+.black-piece {
+    background-color: black;
 }
